@@ -4,11 +4,6 @@ const tableData = data;
 // reference the HTML table using d3
 var tbody = d3.select("tbody");
 
-// simple JS statement
-function printHello() {
-    console.log("Hello there!");
-};
-
 // Build dynamic table
 function buildTable(data) {
     // Clear any existing data
