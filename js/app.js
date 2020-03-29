@@ -24,5 +24,22 @@ function buildTable(data) {
             cell.text(val);
         });
     });
-
 };
+
+// handle click
+function handleClick() {
+    // grab date from html component
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData;
+
+    // if date is selected, filter data table only by that date
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+
+    // call build table function on filtered data
+    buildTable(filteredData);
+};
+
+d3.selectAll("#filter-btn").on("click",handleClick);
+buildTable(tableData);
